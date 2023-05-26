@@ -9,7 +9,7 @@ use Illuminate\Http\Request;
 class ClubesController extends Controller
 {
     /**
-     * Display a listing of the resource.
+     * Exibir a listagem de Clubes.
      */
     public function index()
     {
@@ -17,16 +17,21 @@ class ClubesController extends Controller
     }
 
     /**
-     * Store a newly created resource in storage.
+     * Grava o clube recém-criado no banco de dados
      */
     public function store(Request $request)
     {
-        Clubes::create($request->all());
+        $dados = $request->all();
+
+        $dados['saldo_disponivel'] = str_replace(',', '.', $dados['saldo_disponivel']);
+
+        Clubes::create($dados);
+
         return response()->json('ok', 200);
     }
 
     /**
-     * Display the specified resource.
+     * Exibe o clube selecionado
      */
     public function show(string $id)
     {
@@ -34,7 +39,7 @@ class ClubesController extends Controller
     }
 
     /**
-     * Update the specified resource in storage.
+     * Atualisa o clube no banco de dados.
      */
     public function update(Request $request, string $id)
     {
@@ -42,7 +47,7 @@ class ClubesController extends Controller
     }
 
     /**
-     * Remove the specified resource from storage.
+     * Remove o clube do banco de dados
      */
     public function destroy(string $id)
     {
