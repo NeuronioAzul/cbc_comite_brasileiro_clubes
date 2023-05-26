@@ -9,4 +9,5 @@ class Clubes extends Model
 {
     use HasFactory;
     public $timestamps = false;
+    protected $fillable = ['clube', "saldo_disponivel"];
 }
