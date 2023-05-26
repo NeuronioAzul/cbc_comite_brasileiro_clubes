@@ -8,21 +8,22 @@
 - [Sobre](#about)
 - [Tecnologias utilizadas](#tecnology)
 - [Configuração do ambiente](#configuration)
-  - [Clone o repositório:](#config01)
-  - [Dependências](#config02)
-  - [Altere o arquivo `.env`](#config03)
-  - [Migrações](#config04)
-  - [Servidor](#config05)
+    - [Clone o repositório:](#config01)
+    - [Dependências](#config02)
+    - [Altere o arquivo `.env`](#config03)
+    - [Migrações](#config04)
+    - [Carga de dados](#config05)
+    - [Servidor](#config06)
 - [Uso da Api](#intructions)
-  - [Documentação](#documentation)
+    - [Documentação](#documentation)
 
 
 ## Sobre<a name="about"></a>
-Esta é uma API REST desenvolvida como parte de um teste técnico para o Comitê Brasileiro de Clubes. 
+Esta é uma API REST desenvolvida como parte de um teste técnico para o Comitê Brasileiro de Clubes.
 
 A API permite o gerenciamento de recursos financeiros de clubes, incluindo:
 
-- listagem de clubes; 
+- listagem de clubes;
 - cadastro de clubes;
 - consumo de recursos.
 
@@ -73,7 +74,7 @@ DB_USERNAME=cbc
 DB_PASSWORD=cbc
 ```
 
-4. Migrações<a name="config04"></a> 
+4. Migrações<a name="config04"></a>
 
 Execute as migrações para criar as tabelas no banco de dados:
 
@@ -81,7 +82,24 @@ Execute as migrações para criar as tabelas no banco de dados:
 php artisan migrate
 ```
 
-5. Servidor<a name="config05"></a>
+Para recriar novamente as tabelas execute:
+
+```bash
+php artisan migrate:fresh
+```
+
+
+5. Carga de dados<a name="config05"></a>
+
+Inserindo os dados no banco:
+
+```bash
+php artisan db:seed
+```
+
+Serão inseridos os dados na tabela de recursos com
+
+6. Servidor<a name="config06"></a>
 
 Inicie o servidor de desenvolvimento:
 
@@ -103,7 +121,7 @@ A API possui as seguintes funcionalidades:
 - Cadastrar um clube: `POST /api/clubes`
 - Consumir recursos: `POST /api/consume`
 
-Consulte a documentação da API para obter detalhes sobre a estrutura dos dados e os 
+Consulte a documentação da API para obter detalhes sobre a estrutura dos dados e os
 parâmetros esperados em cada requisição.
 
 <a name="documentation"></a>
