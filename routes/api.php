@@ -21,3 +21,4 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 Route::get('/clubes', [ClubesController::class, 'index']);
 Route::post('/clubes', [ClubesController::class, 'store']);
+Route::post('/clubes/consumirRecursos', [ClubesController::class, 'consumirRecurso']);
