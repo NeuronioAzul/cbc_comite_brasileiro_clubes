@@ -9,4 +9,5 @@ class Recursos extends Model
 {
     use HasFactory;
     public $timestamps = false;
+    public $fillable = ['recurso', 'saldo_disponivel'];
 }
