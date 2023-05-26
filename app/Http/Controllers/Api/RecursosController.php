@@ -1,18 +1,18 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Api;
 
-use App\Models\Clubes;
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
-class ClubesController extends Controller
+class RecursosController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        return Clubes::all();
+        //
     }
 
     /**
