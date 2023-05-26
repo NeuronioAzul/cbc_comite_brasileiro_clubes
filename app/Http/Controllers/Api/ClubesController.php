@@ -21,7 +21,8 @@ class ClubesController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        Clubes::create($request->all());
+        return response()->json('ok', 200);
     }
 
     /**
