@@ -13,7 +13,7 @@ class ClubesController extends Controller
      */
     public function index()
     {
-        return Clubes::all();
+        return response()->json(Clubes::all(), 200);
     }
 
     /**
